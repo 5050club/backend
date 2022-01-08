@@ -1,0 +1,61 @@
+# component template: pick
+
+PUT _component_template/user
+curl -X PUT -H "Content-Type: application/json" localhost: 9200/_component_template/pick -d ' 
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "pick": {
+          "properties": {
+            "ats": {
+              "properties": {
+                "team": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "wager": {
+                  "type": "short"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+'
+
+
+# composable index template
+
+PUT _index_template/users
+curl -X POST -H "Content-Type: application/json" localhost: 9200/_index_template/users -d ' 
+{
+  "index_patterns": ["picks_*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings": {
+      "dynamic": false
+    },
+    "aliases": {
+      "the5050club": {"picks":{}, "the5050club":{}}
+    }
+  },
+  "priority": 500,
+  "composed_of": ["timestamp","user","game","pick"],
+  "version": 1,
+  "_meta": {
+    "description": "50/50 Club picks"
+  }
+}
+'
+

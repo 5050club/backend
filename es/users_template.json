@@ -1,0 +1,119 @@
+# component template: user
+
+PUT _component_template/user
+curl -X PUT -H "Content-Type: application/json" localhost:9200/_component_template/user -d ' 
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "user": {
+          "properties": {
+            "email": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "first_name": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "id": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "last_name": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "password": {
+              "type": "text"
+            },
+            "points": {
+              "properties": {
+                "bonus": {
+                  "type": "float"
+                },
+                "lonewolf": {
+                  "type": "float"
+                },
+                "picks": {
+                  "type": "float"
+                },
+                "total": {
+                  "type": "float"
+                }
+              }
+            },
+            "record": {
+              "properties": {
+                "losses": {
+                  "type": "long"
+                },
+                "pushes": {
+                  "type": "long"
+                },
+                "wins": {
+                  "type": "long"
+                }
+              }
+            },
+            "roles": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "settings": {
+              "properties": {
+                "default_pick": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+'
+
+#component template: timestamp
+
+PUT _component_template/timestamp
+curl -X PUT -H "Content-Type: application/json" localhost:9200/_component_template/timestamp -d ' 
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  }
+}
+'
+
+# composable index template
+
+PUT _index_template/users
+curl -X POST -H "Content-Type: application/json" localhost:9200/_index_template/users -d ' 
+{
+  "index_patterns": ["users"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings": {
+      "dynamic": false
+    },
+    "aliases": {"the5050club" : {}}
+  },
+  "priority": 500,
+  "composed_of": ["timestamp", "user"], 
+  "version": 1,
+  "_meta": {
+    "description": "50/50 Club members"
+  }
+}
+'
+

@@ -1,0 +1,26 @@
+curl -X POST -H "Content-Type: application/json" localhost:9200/users/_doc -d ' 
+{
+    "user": {
+        "id": "1",
+        "email": "jbyroads@gmail.com",
+        "password": "verysecretpwd",
+        "roles": "admin",
+        "first_name": "james",
+        "last_name": "byroads",
+        "settings": {
+            "default_pick": "underdog"
+        },
+        "record": {
+            "wins": 15,
+            "losses": 1,
+            "pushes": 0
+        },
+        "points": {
+            "lonewolf": 5.0,
+            "bonus": 12.0,
+            "picks": 20.0,
+            "total": 37.0
+        }
+    }
+}
+'

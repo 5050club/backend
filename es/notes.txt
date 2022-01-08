@@ -1,0 +1,130 @@
+next steps
+
+- think about if i need transforms for either latest or trending (as the season goes or from one season to next)
+    - games should def be a "stream" aka continuous write, no updates.  w/ transform to get latest
+- do i need any field aliases?
+- consider teams index - store info from teams.yaml, plus record, plus maybe logo maybe for some cool maps or other displays
+- start working on spread parser script (see new json website), (would fastapi work for this too?)
+
+    need to take home team, get city|stadium lat/long, apply value to location field, use to lookup weather.  add weather to doc
+        is this done through spread parser or ingest pipeline?
+        pyton libraries for taking city and returning lat/long
+            https://github.com/googlemaps/google-maps-services-python
+            https://developers.google.com/maps/documentation/geocoding/client-library (connected to first url)
+            https://github.com/geopy/geopy
+        
+        nfl addresses
+            not all of these are right, but good start  - https://waxpackhero.com/nfl-team-addresses
+            can click into stadiums on map to get address - https://americanfootballdatabase.fandom.com/wiki/List_of_current_National_Football_League_stadiums
+
+            weather api - https://openweathermap.org/api/one-call-api
+                API key is 2b424bd2b892fa61b82bfcd0572f5fa4
+                https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+                need to figure out still how exactly i use this data (eg - do i get current vs daily)
+
+                import requests
+
+                base_url = 'http://api.openweathermap.org/data/2.5/weather?'
+                payload = {
+                            'lat': '40.7', # NY City, NY, USA
+                            'lon': '74.0'
+                            'units': 'imperial',
+                            'APPID': 'your-api-key'
+                        }
+                r = requests.get(base_url, params=payload)  # gets json output
+
+    api key: 4e29d3bc02dc3dc900404ced1b879df0
+    Each specified market costs 1 against the usage quota, for each region.
+    curl -X 'GET' \
+    'https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?apiKey=4e29d3bc02dc3dc900404ced1b879df0&regions=us&markets=spreads%2Ctotals&dateFormat=unix&oddsFormat=decimal' \
+    -H 'accept: application/json'
+    https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?apiKey=4e29d3bc02dc3dc900404ced1b879df0&regions=us&markets=spreads%2Ctotals&dateFormat=unix&oddsFormat=decimal
+
+#########
+
+docker run -d --name theclube-es -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.14.2
+
+curl -X GET -H "Content-Type: application/json" localhost:9200/ 
+curl -X PUT -H "Content-Type: application/json" localhost:9200/_template/cdm_stig_dictionary -u james.byroads -o <file> -d ' 
+
+
+
+users
+----------
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| memberid    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| memberemail | varchar(50) | NO   | UNI |         |                |
+| password    | varchar(50) | NO   |     |         |                |
+| userlevel   | int(1)      | NO   |     | 0       |                |
+| firstname   | varchar(50) | NO   |     |         |                |
+| lastname    | varchar(50) | NO   |     |         |                |
+| survivor    | tinyint(4)  | YES  |     | NULL    |                |
+| wins        | int(10)     | NO   |     | 0       |                |
+| losses      | int(10)     | NO   |     | 0       |                |
+| pushes      | int(10)     | NO   |     | 0       |                |
+| lonewolf    | int(11)     | YES  |     | 0       |                |
+| bonus       | float(5,2)  | YES  |     | NULL    |                |
+| points      | float(5,2)  | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+
+
+
+games
+----------
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| week      | varchar(8)  | YES  |     | NULL    |       |
+| gameid    | int(11)     | YES  |     | NULL    |       |
+| date      | datetime    | YES  |     | NULL    |       |
+| favorite  | varchar(30) | YES  |     | NULL    |       |
+| underdog  | varchar(30) | YES  |     | NULL    |       |
+| spread    | varchar(30) | YES  |     | NULL    |       |
+| ATSwinner | varchar(30) | YES  |     | NULL    |       |
+| winner    | varchar(30) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| date       | datetime    | YES  |     | NULL    |                |
+| favorite   | varchar(30) | YES  |     | NULL    |                |
+| spread     | varchar(30) | YES  |     | NULL    |                |
+| underdog   | varchar(30) | YES  |     | NULL    |                |
+| result     | varchar(30) | YES  |     | NULL    |                |
+| winner     | varchar(30) | YES  |     | NULL    |                |
+| pinnacleid | int(11)     | YES  |     | NULL    |                |
+| gameid     | int(11)     | NO   | PRI | NULL    | auto_increment |
++------------+-------------+------+-----+---------+----------------+
+
+game
+    id
+    source
+        id (need a source id and game id?)
+        name
+    date
+    favorite
+    spread
+    underdog
+    spread
+    ats_winner
+    winner
+    home/away?
+    goe loc?
+    weather?
+
+    see some previous work around this
+
+picks
+-------------
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| week     | varchar(7)  | YES  |     | NULL    |       |
+| gameid   | tinyint(4)  | YES  |     | NULL    |       |
+| memberid | int(11)     | YES  |     | NULL    |       |
+| pick     | varchar(30) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+

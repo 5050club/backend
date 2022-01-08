@@ -1,0 +1,192 @@
+Arizona Cardinals:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Atlanta Falcons:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Baltimore Ravens:
+  address: "1101 Russell St, Baltimore, MD 21230"
+  lat: 39.278161984607806
+  lon: -76.62269367258004
+  stadium: "outdoor" #indoor, outdoor, retractable
+  field: "grass" #grass or turf
+Buffalo Bills:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Carolina Panthers:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Chicago Bears:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Cincinnati Bengals:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Cleveland Browns:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Dallas Cowboys:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Denver Broncos:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Detroit Lions:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Green Bay Packers:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Houston Texans:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Indianapolis Colts:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Jacksonville Jaguars:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Kansas City Chiefs:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Las Vegas Raiders:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Los Angeles Chargers:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Los Angeles Rams:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Miami Dolphins:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Minnesota Vikings:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+New England Patriots:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+New Orleans Saints:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+New York Giants:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+New York Jets:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Philadelphia Eagles:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Pittsburgh Steelers:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+San Francisco 49ers:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Seattle Seahawks:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Tampa Bay Buccaneers:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Tennessee Titans:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+Washington Football Team:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
