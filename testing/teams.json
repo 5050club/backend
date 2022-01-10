@@ -1,0 +1,73 @@
+Arizona Cardinals:
+  address: ""
+  lat: 
+  lon: 
+  stadium: 
+  field: 
+
+  # component template: team
+
+PUT _component_template/team
+curl -X PUT -H "Content-Type: application/json" localhost:9200/_component_template/team -d ' 
+{
+    "template": {
+        "mappings": {
+            "properties": {
+            "team": {
+                "properties": {
+                "id": {
+                    "type": "keyword"
+                },
+                "name": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "address": {
+                    "type": "text"
+                },
+                "location": {
+                    "type": "geo_point"
+                },
+                "stadium": {
+                    "type": "keyword"
+                },
+                "field": {
+                    "type": "keyword"
+                }
+                }
+            }
+            }
+        }
+    }
+}
+'
+
+
+# composable index template
+
+PUT _index_template/teams
+curl -X POST -H "Content-Type: application/json" localhost:9200/_index_template/teams -d ' 
+{
+  "index_patterns": ["teams"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings": {
+      "dynamic": false
+    },
+    "aliases": {"the5050club" : {}}
+  },
+  "priority": 500,
+  "composed_of": ["timestamp", "team"], 
+  "version": 1,
+  "_meta": {
+    "description": "50/50 Club NFL teams"
+  }
+}
+'

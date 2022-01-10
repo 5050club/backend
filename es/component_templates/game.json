@@ -1,0 +1,185 @@
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "game": {
+          "properties": {
+            "id": {
+              "type": "keyword"
+            },
+            "status": {
+              "type": "keyword"
+            },
+            "kickoff": {
+              "type": "date"
+            },
+            "location": {
+                "type": "geo_point"
+            },
+            "weather": {
+              "properties":{
+                "temp":{
+                  "type": "float"
+                },
+                "feels_like":{
+                  "type": "float"
+                },
+                "wind_speed":{
+                  "type": "float"
+                },
+                "main":{
+                  "type": "keyword"
+                },
+                "description":{
+                  "type": "text"
+                },
+                "alerts":{
+                  "properties":{
+                    "event":{
+                      "type": "text"
+                    }
+                  }
+                }
+              }
+            },
+            "last_updated": {
+              "type": "date"
+            },
+            "team": {
+              "properties": {
+                "home": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "away": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "favorite": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "underdog": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "spread": {
+              "properties": {
+                "home": {
+                  "type": "float"
+                },
+                "away": {
+                  "type": "float"
+                },
+                "favorite": {
+                  "type": "float"
+                },
+                "underdog": {
+                  "type": "float"
+                },
+                "source": {
+                    "type": "keyword"
+                },
+                "odds": {
+                  "properties": {
+                    "favorite": {
+                      "type": "float"
+                    },
+                    "underdog": {
+                      "type": "float"
+                    }
+                  }
+                }
+              }
+            },
+            "total": {
+              "properties": {
+                  "over_under": {
+                      "type": "float"
+                  },
+                  "source": {
+                      "type": "keyword"
+                  },
+                  "odds": {
+                    "properties": {
+                      "over": {
+                        "type": "float"
+                      },
+                      "under": {
+                        "type": "float"
+                      }
+                    }
+                  }
+              }
+            },
+            "result": {
+              "properties": {
+                "winner": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "loser": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "winning_score": {
+                  "type": "short"
+                },
+                "losing_score": {
+                  "type": "short"
+                },
+                "ats": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "total": {
+                  "type": "keyword"
+                },
+                "total_points": {
+                  "type": "short"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

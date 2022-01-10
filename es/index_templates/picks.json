@@ -1,0 +1,18 @@
+{
+  "index_patterns": ["picks_*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings": {
+      "dynamic": false
+    },
+    "aliases": {"picks" : {}, "the5050club" : {}}
+  },
+  "priority": 500,
+  "composed_of": ["timestamp","user","game","pick"],
+  "version": 1,
+  "_meta": {
+    "description": "50/50 Club picks"
+  }
+}

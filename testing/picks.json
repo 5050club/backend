@@ -1,6 +1,6 @@
 # component template: pick
 
-PUT _component_template/user
+PUT _component_template/pick
 curl -X PUT -H "Content-Type: application/json" localhost: 9200/_component_template/pick -d ' 
 {
   "template": {
@@ -36,7 +36,7 @@ curl -X PUT -H "Content-Type: application/json" localhost: 9200/_component_templ
 # composable index template
 
 PUT _index_template/users
-curl -X POST -H "Content-Type: application/json" localhost: 9200/_index_template/users -d ' 
+curl -X POST -H "Content-Type: application/json" localhost: 9200/_index_template/picks -d ' 
 {
   "index_patterns": ["picks_*"],
   "template": {

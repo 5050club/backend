@@ -1,0 +1,72 @@
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "user": {
+          "properties": {
+            "email": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "first_name": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "id": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "last_name": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "password": {
+              "type": "text"
+            },
+            "points": {
+              "properties": {
+                "bonus": {
+                  "type": "float"
+                },
+                "lonewolf": {
+                  "type": "float"
+                },
+                "picks": {
+                  "type": "float"
+                },
+                "total": {
+                  "type": "float"
+                }
+              }
+            },
+            "record": {
+              "properties": {
+                "losses": {
+                  "type": "long"
+                },
+                "pushes": {
+                  "type": "long"
+                },
+                "wins": {
+                  "type": "long"
+                }
+              }
+            },
+            "roles": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "settings": {
+              "properties": {
+                "default_pick": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

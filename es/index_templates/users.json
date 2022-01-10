@@ -1,0 +1,18 @@
+{
+  "index_patterns": ["users"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings": {
+      "dynamic": false
+    },
+    "aliases": {"the5050club" : {}}
+  },
+  "priority": 500,
+  "composed_of": ["timestamp", "user"], 
+  "version": 1,
+  "_meta": {
+    "description": "50/50 Club members"
+  }
+}

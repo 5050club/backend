@@ -1,0 +1,36 @@
+{
+    "template": {
+        "mappings": {
+            "properties": {
+            "team": {
+                "properties": {
+                "id": {
+                    "type": "keyword"
+                },
+                "name": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "address": {
+                    "type": "text"
+                },
+                "location": {
+                    "type": "geo_point"
+                },
+                "stadium": {
+                    "type": "keyword"
+                },
+                "field": {
+                    "type": "keyword"
+                }
+                }
+            }
+            }
+        }
+    }
+}

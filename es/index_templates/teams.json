@@ -1,0 +1,18 @@
+{
+  "index_patterns": ["teams"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings": {
+      "dynamic": false
+    },
+    "aliases": {"the5050club" : {}}
+  },
+  "priority": 500,
+  "composed_of": ["timestamp", "team"], 
+  "version": 1,
+  "_meta": {
+    "description": "50/50 Club NFL teams"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "pick": {
+          "properties": {
+            "ats": {
+              "properties": {
+                "team": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "wager": {
+                  "type": "short"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
