@@ -1,0 +1,9 @@
+'jbyroads@gmail.com':
+  user.id: 1
+  user.email: jbyroads@gmail.com
+  user.first_name: James
+  user.last_name: Byroads
+  user.roles:
+    - 1
+  user.settings.default_pick: underdog
+  user.password: abcdefg

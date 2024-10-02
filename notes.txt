@@ -1,51 +1,76 @@
+comment: this is a "backend" repo.  right now i have it doing 2 things seemingly.  1 - storing stuff thats needed for creating eck, deploying a cluster, or docker spinning up an es cluster.  2 - source control for things like index templates and sample data.  Might want to split this up long term
+
+#########
+
 next steps
 
 - think about if i need transforms for either latest or trending (as the season goes or from one season to next)
     - games should def be a "stream" aka continuous write, no updates.  w/ transform to get latest
 - do i need any field aliases?
 - consider teams index - store info from teams.yaml, plus record, plus maybe logo maybe for some cool maps or other displays
-- start working on spread parser script (see new json website), (would fastapi work for this too?)
-
-    need to take home team, get city|stadium lat/long, apply value to location field, use to lookup weather.  add weather to doc
-        is this done through spread parser or ingest pipeline?
-        pyton libraries for taking city and returning lat/long
-            https://github.com/googlemaps/google-maps-services-python
-            https://developers.google.com/maps/documentation/geocoding/client-library (connected to first url)
-            https://github.com/geopy/geopy
-        
-        nfl addresses
-            not all of these are right, but good start  - https://waxpackhero.com/nfl-team-addresses
-            can click into stadiums on map to get address - https://americanfootballdatabase.fandom.com/wiki/List_of_current_National_Football_League_stadiums
-
-            weather api - https://openweathermap.org/api/one-call-api
-                API key is 2b424bd2b892fa61b82bfcd0572f5fa4
-                https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-                need to figure out still how exactly i use this data (eg - do i get current vs daily)
-
-                import requests
-
-                base_url = 'http://api.openweathermap.org/data/2.5/weather?'
-                payload = {
-                            'lat': '40.7', # NY City, NY, USA
-                            'lon': '74.0'
-                            'units': 'imperial',
-                            'APPID': 'your-api-key'
-                        }
-                r = requests.get(base_url, params=payload)  # gets json output
-
-    api key: 4e29d3bc02dc3dc900404ced1b879df0
-    Each specified market costs 1 against the usage quota, for each region.
-    curl -X 'GET' \
-    'https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?apiKey=4e29d3bc02dc3dc900404ced1b879df0&regions=us&markets=spreads%2Ctotals&dateFormat=unix&oddsFormat=decimal' \
-    -H 'accept: application/json'
-    https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?apiKey=4e29d3bc02dc3dc900404ced1b879df0&regions=us&markets=spreads%2Ctotals&dateFormat=unix&oddsFormat=decimal
 
 #########
 
+ECK
+
+###
+# setup ECK operator
+# https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-deploy-eck.html
+
+> kubectl create -f https://download.elastic.co/downloads/eck/2.14.0/crds.yaml
+> kca -f https://download.elastic.co/downloads/eck/2.14.0/operator.yaml
+
+###
+# create es and kb cluster
+
+# create namespace and then es/kb cluster in that namespace
+> kca -f /Users/j10s/apps/5050club/backend/k8s/namespaces/elastic-clusters.yaml
+> kca -f /Users/j10s/apps/5050club/backend/k8s/es_kibana_simple.yaml -n elastic-clusters
+
+
+###
+# authentication
+
+# A default user named elastic is created by default w/ pw stored in k8s secret
+
+> PASSWORD=$(kubectl get secret es-5050club-es-elastic-user -o go-template='{{.data.elastic | base64decode}}')
+> echo $PASSWORD
+
+###
+# networking - es
+
+# A ClusterIP Service is auto created
+> kcg service es-5050club-es-http
+
+# connect from inside the k8s cluster
+> curl -u "elastic:$PASSWORD" -k "https://es-5050club-es-http:9200"
+
+# set up port forward to connect from laptop
+> kubectl port-forward service/es-5050club-es-http 9200
+> curl -u "elastic:$PASSWORD" -k "https://localhost:9200"
+
+###
+# networking - kb
+
+# A ClusterIP Service is auto created
+> kcg service kb-5050club-kb-http
+
+# set up port forward to connect from laptop
+> kubectl port-forward service/kb-5050club-kb-http 5601
+
+# go to browser - https://localhost:5601
+
+
+
+
+
+
+##########
+
 docker run -d --name theclube-es -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.14.2
 
-curl -X GET -H "Content-Type: application/json" localhost:9200/ 
-curl -X PUT -H "Content-Type: application/json" localhost:9200/_template/cdm_stig_dictionary -u james.byroads -o <file> -d ' 
+curl -X GET -H "Content-Type: application/json" localhost:9200/
+curl -X PUT -H "Content-Type: application/json" localhost:9200/_template/cdm_stig_dictionary -u james.byroads -o <file> -d '
 
 
 
