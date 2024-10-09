@@ -167,11 +167,11 @@ San Francisco 49ers:
   stadium: 
   field: 
 Seattle Seahawks:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "800 Occidental Ave S, Seattle, WA 98134"
+  lat: 47.59516609997004
+  lon: -122.33176078489454
+  stadium: outdoor
+  field: turf
 Tampa Bay Buccaneers:
   address: ""
   lat: 
