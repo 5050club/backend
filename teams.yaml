@@ -1,192 +1,192 @@
 Arizona Cardinals:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 Cardinals Dr, Glendale, AZ 85305"
+  lat: 33.52766230863061
+  lon: -112.2624445874515
+  stadium: retractable
+  field: grass
 Atlanta Falcons:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 AMB Dr NW, Atlanta, GA 30313"
+  lat: 33.75551941628324
+  lon: -84.40061196073688
+  stadium: retractable
+  field: turf
 Baltimore Ravens:
   address: "1101 Russell St, Baltimore, MD 21230"
-  lat: 39.278161984607806
-  lon: -76.62269367258004
-  stadium: "outdoor" #indoor, outdoor, retractable
-  field: "grass" #grass or turf
+  lat: 39.278016062008696
+  lon: -76.62292224518437
+  stadium: outdoor
+  field: grass
 Buffalo Bills:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 Bills Dr, Orchard Park, NY 14127"
+  lat: 42.773935705221284
+  lon: -78.78691865853072
+  stadium: outdoor
+  field: turf 
 Carolina Panthers:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "800 S Mint St, Charlotte, NC 28202"
+  lat: 35.22596352135865
+  lon: -80.85297573184799
+  stadium: outdoor
+  field: turf
 Chicago Bears:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1410 Special Olympics Dr, Chicago, IL 60605"
+  lat: 41.862449006327786
+  lon: -87.61670986042104
+  stadium: outdoor
+  field: grass
 Cincinnati Bengals:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 Paycor Stadium, Cincinnati, OH 45202"
+  lat: 39.09564075688499
+  lon: -84.51608988937117
+  stadium: outdoor
+  field: turf
 Cleveland Browns:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "100 Alfred Lerner Way, Cleveland, OH 44114"
+  lat: 41.506138147809494
+  lon: -81.699546122434
+  stadium: outdoor
+  field: grass
 Dallas Cowboys:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 AT&T Way, Arlington, TX 76011"
+  lat: 32.74821313915139
+  lon: -97.09338431659249
+  stadium: retractable
+  field: turf
 Denver Broncos:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1701 Bryant St, Denver, CO 80204"
+  lat: 39.74407921001108
+  lon: -105.02007721632953
+  stadium: outdoor
+  field: grass
 Detroit Lions:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "2000 Brush St, Detroit, MI 48226"
+  lat: 42.34022048992688
+  lon: -83.04559227389296
+  stadium: indoor
+  field: turf
 Green Bay Packers:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1265 Lombardi Ave, Green Bay, WI 54304"
+  lat: 44.50149361429442
+  lon: -88.0621761161267
+  stadium: outdoor
+  field: grass
 Houston Texans:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "NRG Pkwy, Houston, TX 77054"
+  lat: 29.684954895388007
+  lon: -95.41067521669349
+  stadium: retractable
+  field: turf
 Indianapolis Colts:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "500 S Capitol Ave, Indianapolis, IN 46225"
+  lat: 39.7602573751713
+  lon: -86.16390916050844
+  stadium: retractable
+  field: turf
 Jacksonville Jaguars:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 EverBank Stadium Dr, Jacksonville, FL 32202"
+  lat: 30.324122876850083
+  lon: -81.63733897434496
+  stadium: outdoor
+  field: grass
 Kansas City Chiefs:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 Arrowhead Dr, Kansas City, MO 64129"
+  lat: 39.04913964553957
+  lon: -94.48402483170125
+  stadium: outdoor
+  field: grass
 Las Vegas Raiders:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "3333 Al Davis Way, Las Vegas, NV 89118"
+  lat: 36.091057207791664
+  lon: -115.18334366065191
+  stadium: indoor
+  field: grass
 Los Angeles Chargers:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1001 Stadium Dr, Inglewood, CA 90301"
+  lat: 33.95366086148091
+  lon: -118.33906106072979
+  stadium: indoor
+  field: turf
 Los Angeles Rams:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1001 Stadium Dr, Inglewood, CA 90301"
+  lat: 33.95366086148091
+  lon: -118.33906106072979
+  stadium: indoor
+  field: turf
 Miami Dolphins:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "347 Don Shula Dr Suite 102, Miami Gardens, FL 33056"
+  lat: 25.958576784196676
+  lon: -80.23958717447587
+  stadium: outdoor
+  field: grass
 Minnesota Vikings:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "401 Chicago Ave, Minneapolis, MN 55415"
+  lat: 44.97382822889101
+  lon: -93.25750523144913
+  stadium: indoor
+  field: turf
 New England Patriots:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 Patriot Pl, Foxborough, MA 02035"
+  lat: 42.091105004490686
+  lon: -71.26433577390365
+  stadium: outdoor
+  field: turf
 New Orleans Saints:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1500 Sugar Bowl Dr, New Orleans, LA 70112"
+  lat: 29.95123759925106
+  lon: -90.0812334743569
+  stadium: indoor
+  field: turf
 New York Giants:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 MetLife Stadium Dr, East Rutherford, NJ 07073"
+  lat: 40.813701251641675
+  lon: -74.07446773162921
+  stadium: outdoor
+  field: turf
 New York Jets:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 MetLife Stadium Dr, East Rutherford, NJ 07073"
+  lat: 40.813701251641675
+  lon: -74.07446773162921
+  stadium: outdoor
+  field: turf
 Philadelphia Eagles:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "One Lincoln Financial Field Way, Philadelphia, PA 19148"
+  lat: 39.90155054502655
+  lon: -75.16750004515904
+  stadium: outdoor
+  field: turf
 Pittsburgh Steelers:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "100 Art Rooney Ave, Pittsburgh, PA 15212"
+  lat: 40.44692806606187
+  lon: -80.01572811630078
+  stadium: outdoor
+  field: grass
 San Francisco 49ers:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "4900 Marie P DeBartolo Way, Santa Clara, CA 95054"
+  lat: 37.40351249546264
+  lon: -121.96938813176607
+  stadium: outdoor
+  field: grass
 Seattle Seahawks:
   address: "800 Occidental Ave S, Seattle, WA 98134"
-  lat: 47.59516609997004
-  lon: -122.33176078489454
+  lat: 47.59534711987433
+  lon: -122.33162867365681
   stadium: outdoor
   field: turf
 Tampa Bay Buccaneers:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "4201 N Dale Mabry Hwy, Tampa, FL 33607"
+  lat: 27.976077528474935
+  lon: -82.50331294558184
+  stadium: outdoor
+  field: grass
 Tennessee Titans:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
-Washington Football Team:
-  address: ""
-  lat: 
-  lon: 
-  stadium: 
-  field: 
+  address: "1 Titans Wy, Nashville, TN 37213"
+  lat: 36.16666818556684
+  lon: -86.77128877414133
+  stadium: outdoor
+  field: turf
+Washington Commanders:
+  address: "1600 Ring Rd, Landover, MD 20785"
+  lat: 38.908290996590814
+  lon: -76.86400986054277
+  stadium: outdoor
+  field: grass
