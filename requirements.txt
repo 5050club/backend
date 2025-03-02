@@ -1,5 +1,8 @@
 elasticsearch==8.15.1
+requests==2.32.3
 pyyaml==6.0.2
+psycopg[binary,pool]
+psycopg==3.2.3
 #requests==2.32.3
 #certifi==2024.8.30
 #charset-normalizer==3.3.2

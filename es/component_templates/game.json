@@ -4,155 +4,97 @@
       "properties": {
         "game": {
           "properties": {
-            "id": {
+            "away_team": {
               "type": "keyword"
             },
-            "status": {
+            "field_type": {
+              "type": "keyword"
+            },
+            "home_team": {
+              "type": "keyword"
+            },
+            "id": {
               "type": "keyword"
             },
             "kickoff": {
               "type": "date"
             },
-            "location": {
-                "type": "geo_point"
-            },
-            "weather": {
-              "properties":{
-                "temp":{
-                  "type": "float"
-                },
-                "feels_like":{
-                  "type": "float"
-                },
-                "wind_speed":{
-                  "type": "float"
-                },
-                "main":{
-                  "type": "keyword"
-                },
-                "description":{
-                  "type": "text"
-                },
-                "alerts":{
-                  "properties":{
-                    "event":{
-                      "type": "text"
-                    }
-                  }
-                }
-              }
-            },
             "last_updated": {
               "type": "date"
             },
-            "team": {
-              "properties": {
-                "home": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
-                },
-                "away": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
-                },
-                "favorite": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
-                },
-                "underdog": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
-                }
-              }
+            "location": {
+              "type": "geo_point"
+            },
+            "source": {
+              "type": "keyword"
             },
             "spread": {
               "properties": {
-                "home": {
+                "favorite_odds": {
                   "type": "float"
                 },
-                "away": {
+                "favorite_points": {
                   "type": "float"
                 },
-                "favorite": {
+                "favorite_team": {
+                  "type": "keyword"
+                },
+                "underdog_odds": {
                   "type": "float"
                 },
-                "underdog": {
+                "underdog_points": {
                   "type": "float"
                 },
-                "source": {
-                    "type": "keyword"
-                },
-                "odds": {
-                  "properties": {
-                    "favorite": {
-                      "type": "float"
-                    },
-                    "underdog": {
-                      "type": "float"
-                    }
-                  }
+                "underdog_team": {
+                  "type": "keyword"
                 }
               }
             },
+            "stadium_type": {
+              "type": "keyword"
+            },
+            "completed": {
+              "type": "boolean"
+            },
             "total": {
               "properties": {
-                  "over_under": {
-                      "type": "float"
-                  },
-                  "source": {
-                      "type": "keyword"
-                  },
-                  "odds": {
-                    "properties": {
-                      "over": {
-                        "type": "float"
-                      },
-                      "under": {
-                        "type": "float"
-                      }
-                    }
-                  }
+                "over_odds": {
+                  "type": "float"
+                },
+                "over_under": {
+                  "type": "float"
+                },
+                "under_odds": {
+                  "type": "float"
+                }
               }
             },
-            "result": {
+            "weather": {
+              "properties": {
+                "detailed_forecast": {
+                  "type": "text"
+                },
+                "precipitation": {
+                  "type": "long"
+                },
+                "short_forecast": {
+                  "type": "text"
+                },
+                "temp": {
+                  "type": "long"
+                },
+                "wind_speed": {
+                  "type": "text"
+                }
+              }
+            },
+            "results": {
               "properties": {
                 "winner": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
+                  "type": "keyword"
                 },
                 "loser": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
+                  "type": "keyword"
                 },
                 "winning_score": {
                   "type": "short"
@@ -160,14 +102,8 @@
                 "losing_score": {
                   "type": "short"
                 },
-                "ats": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
+                "ats_winner": {
+                  "type": "keyword"
                 },
                 "total": {
                   "type": "keyword"
